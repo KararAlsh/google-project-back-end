@@ -9,43 +9,34 @@
         </form>
       </header>
       <main>
-        <div>
+				<div>
           <span>37 Results</span>
         </div>
+				{{#each data as |element|}}
         <div class="result-box">
-          <small>www.w3school.com</small>
+          <small>{{element.url}}</small>
           <a
             href="https://www.juventus.com/en/"
             class="results-name"
             target="_blank"
-            ><h1>JavaScript Tutorial - W3School</h1></a
+            ><h1>{{element.title}}</h1></a
           >
           <p>
-            Well organized and easy to understand Web building tutorials with
-            lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP,
-            Python, Bootstrap, Java
+            {{element.description}}
           </p>
           <div>
             <ul>
+							{{#each links as |link|}}
               <li>
-                <a href="https://www.juventus.com/en/" target="_blank"
-                  >JavaScript Introduction</a
+                <a href="{{link.url}}" target="_blank"
+                  >{{link.title}}</a
                 >
               </li>
-              <li>
-                <a href="https://www.juventus.com/en/" target="_blank"
-                  >JS Functions</a
-                >
-              </li>
-              <li>
-                <a href="https://www.juventus.com/en/" target="_blank"
-                  >JavaScript Examples</a
-                >
-              </li>
+							{{/each}}
             </ul>
           </div>
         </div>
-        <div class="result-box">
+        <!-- <div class="result-box">
           <small>developer.mozilla.org</small>
           <a
             href="https://www.juventus.com/en/"
@@ -106,6 +97,7 @@
               </li>
             </ul>
           </div>
-        </div>
+        </div> -->
+				{{/each}}
       </main>
     </div>
