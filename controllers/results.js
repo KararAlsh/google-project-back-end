@@ -53,7 +53,7 @@ let data = [
     ]
   }
 ]
-// Create here a controller that accepts GET requests and renders the "search" page
+// Functions
 const matches = (data, search) => {
   let results = data.filter(element => element.title == search)
   return results
@@ -64,7 +64,7 @@ router.post('/', (req, res) => {
   console.log(req.body)
   res.render('results', { data: matches(data, req.body.search) })
 })
-
+// Create here a controller that accepts GET requests and renders the "search" page
 router.get('/', (req, res) => {
   res.render('results')
 })
