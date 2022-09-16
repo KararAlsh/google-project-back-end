@@ -43,6 +43,7 @@
 
 /* LAYOUT */
 .wrap {
+  margin-top: 100px;
   display: grid;
   justify-content: center;
   text-align: center;
