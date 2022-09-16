@@ -1,68 +1,72 @@
 // Import Packages
 const express = require('express')
 const router = express.Router()
-
-// Views
-let data = [
-  // num 1
-  {
-    title: 'JavaS tutorials',
-    description: 'The best JavaScript tutorials in the galaxy!',
-    url: 'https://www.w3schools.com',
-    links: [
-      {
-        title: 'JS for Beginners',
-        url: 'https://www.w3schools.com/js'
-      },
-      {
-        title: 'JS for the Web',
-        url: 'https://www.w3schools.com/js'
-      }
-    ]
-  },
-  // num 2
-  {
-    title: 'JS tutorials',
-    description: 'The best JavaScript tutorials in the galaxy!',
-    url: 'https://www.w3schools.com',
-    links: [
-      {
-        title: 'JS for Beginners',
-        url: 'https://www.w3schools.com/js'
-      },
-      {
-        title: 'JS for the Web',
-        url: 'https://www.w3schools.com/js'
-      }
-    ]
-  },
-  // num 3
-  {
-    title: 'JavaScript tutorials',
-    description: 'The best JavaScript tutorials in the galaxy!',
-    url: 'https://www.w3schools.com',
-    links: [
-      {
-        title: 'JS for Beginners',
-        url: 'https://www.w3schools.com/js'
-      },
-      {
-        title: 'JS for the Web',
-        url: 'https://www.w3schools.com/js'
-      }
-    ]
-  }
-]
-// Functions
-const matches = (data, search) => {
-  let results = data.filter(element => element.title == search)
-  return results
-}
+const Results = require('../models/results')
+// // Views
+// let data = [
+//   // num 1
+//   {
+//     title: 'JavaS tutorials',
+//     description: 'The best JavaScript tutorials in the galaxy!',
+//     url: 'https://www.w3schools.com',
+//     links: [
+//       {
+//         title: 'JS for Beginners',
+//         url: 'https://www.w3schools.com/js'
+//       },
+//       {
+//         title: 'JS for the Web',
+//         url: 'https://www.w3schools.com/js'
+//       }
+//     ]
+//   },
+//   // num 2
+//   {
+//     title: 'JS tutorials',
+//     description: 'The best JavaScript tutorials in the galaxy!',
+//     url: 'https://www.w3schools.com',
+//     links: [
+//       {
+//         title: 'JS for Beginners',
+//         url: 'https://www.w3schools.com/js'
+//       },
+//       {
+//         title: 'JS for the Web',
+//         url: 'https://www.w3schools.com/js'
+//       }
+//     ]
+//   },
+//   // num 3
+//   {
+//     title: 'JavaScript tutorials',
+//     description: 'The best JavaScript tutorials in the galaxy!',
+//     url: 'https://www.w3schools.com',
+//     links: [
+//       {
+//         title: 'JS for Beginners',
+//         url: 'https://www.w3schools.com/js'
+//       },
+//       {
+//         title: 'JS for the Web',
+//         url: 'https://www.w3schools.com/js'
+//       }
+//     ]
+//   }
+// ]
+// // Functions
+// const matches = (data, search) => {
+//   let results = data.filter(element => element.title == search)
+//   return results
+// }
 
 //  POST controller
-router.post('/', (req, res) => {
-  console.log(req.body)
-  res.render('results', { data: matches(data, req.body.search) })
+router.post('/', async (req, res) => {
+  let data = await Results.find({
+    title: req.body.search
+  })
+  res.render('results', { data })
+  // console.log(req.body)
+  // res.render('results', { data: matches(data, req.body.search) })
 })
 // Create here a controller that accepts GET requests and renders the "search" page
 router.get('/', (req, res) => {
