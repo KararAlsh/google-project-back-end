@@ -1,7 +1,7 @@
 <div class="resultbody">
       <header>
         <div>
-          <img class="results-logo" src="img/google.png" />
+          <a href="/"><img class="results-logo"  src="img/google.png" /></a>
         </div>
         <form>
           <input class="results-searchbar" type="text" />
@@ -12,92 +12,69 @@
 				<div>
           <span>37 Results</span>
         </div>
-				{{#each data as |element|}}
-        <div class="result-box">
-          <small>{{element.url}}</small>
-          <a
-            href="https://www.juventus.com/en/"
-            class="results-name"
-            target="_blank"
-            ><h1>{{element.title}}</h1></a
-          >
-          <p>
-            {{element.description}}
-          </p>
-          <div>
-            <ul>
-							{{#each links as |link|}}
-              <li>
-                <a href="{{link.url}}" target="_blank"
-                  >{{link.title}}</a
-                >
-              </li>
-							{{/each}}
-            </ul>
-          </div>
-        </div>
-        <!-- <div class="result-box">
-          <small>developer.mozilla.org</small>
-          <a
-            href="https://www.juventus.com/en/"
-            class="results-name"
-            target="_blank"
-            ><h1>JavaScript | MDN</h1></a
-          >
-          <p>
-            JavaScript (JS) is a lightweight, interpreted, or just in-time
-            compiled programming language with first-class functions. While it
-            is most well-known as the scripting language for Web pages like
-            CouchDB and Adobe Acrobat
-          </p>
-          <div>
-            <ul>
-              <li>
-                <a href="https://www.juventus.com/en/" target="_blank"
-                  >JavaScript Operator</a
-                >
-              </li>
-              <li>
-                <a href="https://www.juventus.com/en/" target="_blank"
-                  >JavaScript Code</a
-                >
-              </li>
-              <li>
-                <a href="https://www.juventus.com/en/" target="_blank"
-                  >JavaScript Meaning</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="result-box">
-          <small>en.wikipedia.org</small>
-          <a
-            href="https://www.juventus.com/en/"
-            class="results-name"
-            target="_blank"
-            ><h1>JavaScript - Wikipedia</h1></a
-          >
-          <p>
-            JavaScript often abbreviated as JS, is a programming language that
-            conforms to the ECMAScript specification. JavaScript is high-level,
-            often just in-time.
-          </p>
-          <div>
-            <ul>
-              <li>
-                <a href="https://www.juventus.com/en/" target="_blank"
-                  >JavaScript Online</a
-                >
-              </li>
-              <li>
-                <a href="https://www.juventus.com/en/" target="_blank"
-                  >JavaScript Definition</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div> -->
-				{{/each}}
+				{{>result}}
       </main>
     </div>
+
+		        <!-- <div class="result-box">
+		          <small>developer.mozilla.org</small>
+		          <a
+		            href="https://www.juventus.com/en/"
+		            class="results-name"
+		            target="_blank"
+		            ><h1>JavaScript | MDN</h1></a
+		          >
+		          <p>
+		            JavaScript (JS) is a lightweight, interpreted, or just in-time
+		            compiled programming language with first-class functions. While it
+		            is most well-known as the scripting language for Web pages like
+		            CouchDB and Adobe Acrobat
+		          </p>
+		          <div>
+		            <ul>
+		              <li>
+		                <a href="https://www.juventus.com/en/" target="_blank"
+		                  >JavaScript Operator</a
+		                >
+		              </li>
+		              <li>
+		                <a href="https://www.juventus.com/en/" target="_blank"
+		                  >JavaScript Code</a
+		                >
+		              </li>
+		              <li>
+		                <a href="https://www.juventus.com/en/" target="_blank"
+		                  >JavaScript Meaning</a
+		                >
+		              </li>
+		            </ul>
+		          </div>
+		        </div>
+		        <div class="result-box">
+		          <small>en.wikipedia.org</small>
+		          <a
+		            href="https://www.juventus.com/en/"
+		            class="results-name"
+		            target="_blank"
+		            ><h1>JavaScript - Wikipedia</h1></a
+		          >
+		          <p>
+		            JavaScript often abbreviated as JS, is a programming language that
+		            conforms to the ECMAScript specification. JavaScript is high-level,
+		            often just in-time.
+		          </p>
+		          <div>
+		            <ul>
+		              <li>
+		                <a href="https://www.juventus.com/en/" target="_blank"
+		                  >JavaScript Online</a
+		                >
+		              </li>
+		              <li>
+		                <a href="https://www.juventus.com/en/" target="_blank"
+		                  >JavaScript Definition</a
+		                >
+		              </li>
+		            </ul>
+		          </div>
+		        </div> -->
